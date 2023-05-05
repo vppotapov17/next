@@ -1,0 +1,178 @@
+section.profile{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 2%;
+	margin-left: 15%;
+	margin-right: 25%;
+	align-items: center;
+}
+
+section.profile div.left{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+
+section.profile div.name{
+	font-family: 'Manrope';
+	color: #484848;
+	font-size: 22px;
+	margin-left: 30px;
+}
+
+section.profile a{
+    text-decoration: none;
+    font-family: 'Manrope';
+    font-size: 17px;
+    color: white;
+    background-color:#484848;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+section a:hover{
+  background-color: #6e6e6e;
+  
+}
+
+section.myOrders{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Manrope';
+	font-size: 24px;
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-right: 15%;
+}
+
+div.order{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	margin-left: 5%;
+
+}
+
+div.order div.header{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 4%;
+	display: flex;
+	flex-direction: row;
+}
+
+div.order div.header div.date{
+	color: #484848;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+div.order div.items div.title{
+	font-size: 24px;
+	font-weight: 300;
+	margin-top: 20px;
+}
+
+div.items{
+	width: 100%;
+}
+
+div.order div.items div.item{
+	margin-top: 35px;
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid #bfbdbd;
+	padding-bottom: 35px;
+	width: 100%;
+}
+
+div.order div.items div.item img{
+	border-radius: 10px;
+}
+
+div.order div.items div.item div.info{
+	margin-left: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+div.order div.items div.item div.info div.brand{
+	font-size: 20px;
+	font-weight: 500;
+}
+
+div.order div.items div.item div.info div.name{
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+div.order div.items div.item div.info div.bottom div.price{
+	font-size: 19px;
+}
+
+div.totalPrice{
+	margin-top: 20px;
+	font-size: 20px;
+	align-self: flex-end;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+section.addItem{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 3%;
+}
+
+form>div.description{
+	display: flex;
+	flex-direction: column;
+}
+
+section.addItem form>div{
+	margin-bottom: 20px;
+	font-size: 17px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+button{
+	padding: 8px;
+	color: #484848;
+	cursor: pointer;
+	font-size: 17px;
+	margin-top: 10px;
+}
+
+h3{
+	margin-bottom: 20px;
+}
+
+section.addItem form>div input, select, textarea{
+	margin-left: 20px;
+	font-size: 17px;
+	padding: 5px;
+}
+
+@font-face{
+    font-family: "Manrope";
+    src: url('../fonts/manrope.ttf');
+}

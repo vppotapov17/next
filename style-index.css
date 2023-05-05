@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&subset=cyrillic');
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+    font-family: "Montserrat-Regular";
+    font-size: 100%;
+    background: #f1efebdc;
+}
+
+section.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section.menu {
+    margin-left: 24%;
+    margin-right: 19%;
+    margin-top: 1.3%;
+    display: flex;
+    padding-left: 1px;
+    flex-direction: column;
+    animation-name: slidein;
+    animation-duration: 1.5s;    
+}
+
+section.foto {
+    margin-left: 50%;
+    margin-right: 17%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    animation-name: slidein;
+    animation-duration: 1.5s;
+}
+#nav{
+    height: 70px;
+   }
+   #nav ul{
+    list-style: none;
+   }
+*{
+    margin: 0;
+    padding: 0;
+   }
+   #nav > ul > li{
+    float: left;
+    width: 200px;
+    position: relative;
+   }
+   #nav li a{
+    display: block;
+    background: #ffffffdc;
+    border: 1px solid #262c38;
+    color: #f8faff;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+   }
+   #nav li a:hover{
+    background: #f9fafa;
+   }
+   #nav li a{
+    display: block;
+    background: #ffffff50; /*фон табличек*/
+    border: 1px solid #ffffff;
+    color: #060A13;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+   }
+   #nav li .second{
+    display: none;
+    position: absolute;
+    top: 100%;
+   }
+   #nav li a:hover{
+    background: #ffffff;
+   }
+   #nav li:hover .second{
+    display: block;
+   }
+   #nav li li{
+    width: 150px;
+   }
+   #nav li li .third{
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+   }
+   #nav li li:hover .third{
+    display: block;
+   }
+  div.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .section {
+    width: 100%; 
+    margin: 50px 0;
+  }
+  .section:nth-child(2n) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+    text-align: right;
+  }
+  .section:nth-child(2n+1) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;  
+  }
+  figure {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000000;
+    border-radius: 50%; 
+  }
+  .empty, .wrap, .figure {
+    width: 33.33%
+  }
+  .wrap {
+    overflow:hidden;
+    width: 600px;
+    height:470px;/*растояние между фото и блоками*/
+    }
+    .wrap img {
+            transition: all 1s ease-out;     /*время работы*/
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -webkit-transition: all 1s ease-out;
+            }
+            .wrap img:hover{
+            transform: scale(1.1); /*дист расширения*/
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            }
+  
+    div.model1 {
+        margin-left: 5%;
+        margin-right: 5%;
+         margin-top: 2%;
+         
+          }
+          img.modelm {
+            margin-right: 3%;
+            margin-left: 3%
+          }
+img.modelm1{
+  margin-right: 3%;
+}
+div.vesna{
+  margin-top: 4%;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+img.ves{
+  margin-left: 20%; 
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;/*обнуление отступов*/
+    padding: 0;/*обнуление полей*/
+    box-sizing: border-box;/*метод расчета размеров бокса*/
+    font-family: 'Poppins', sans-serif;/*название шрифта*/
+}
+body {
+    display: flex;/*флексбокс сетка*/
+    flex-direction: column;/*направление главной оси*/
+    justify-content: flex-end;/*элементы в конце контейнера*/
+    min-height: 100vh;
+}
+footer{
+    
+    width: 100%;/*на всю ширину*/
+    padding: 20px 50px;/*поля для контента*/
+    background: #1c1c1dce;/*цвет футера*/
+    display: flex;
+    justify-content: center;/*в центре по горизонтали*/
+    align-items: center;/*в центре по вертикали*/
+    flex-direction: column;
+    margin-top: 100px;/*отступ сверху*/
+}
+footer .wave{
+  position: absolute;/*абсолютное позиционирование*/
+    top: -120px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);/*картинка волны*/
+    background-size: 1000px 100px;/*ширина и высота волны*/
+}
+.social,
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+.social li,
+.menu li{
+    list-style: none;/*удалить черные маркеры*/
+}
+.social li a {
+    font-size: 2em;/*размер иконок*/
+    color: rgb(255, 255, 255);/*цвет иконок*/
+    margin: 0 10px;
+    display: inline-block;/*отображать как строчно-блочный элемент*/
+    transition: 0.5s;/*плавный переход*/
+}
+.menu li a {
+    font-size: 1.2em;/*размер ссылок меню*/
+    color: #fff;/*цвет ссылок меню*/
+    opacity: 0.75;/*значение прозрачности*/
+    margin: 0 15px;
+    text-decoration: none;/*ссылка без подчеркивания*/
+    display: inline-block;
+}
+.menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}    
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(https://html5book.ru/wp-content/uploads/2021/04/background_54.png)
+}
+
+ul {
+  list-style: none;
+}
+
+.topmenu {
+  background: white;
+}
+
+.topmenu a {
+  text-decoration: none;
+  display: block;
+  transition: .4s ease-in-out;
+}
+
+.topmenu>li>a {
+  padding: 20px;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.topmenu li a:hover {
+  color: #c0a97a;
+}
+
+.submenu li a {
+  border-bottom: 1px solid #efefef;
+  font-size: 12px;
+  color: #484848;
+  font-family: 'Kurale', serif;
+}
+
+@media(max-width: 599px) {
+  .topmenu>li>a {
+     padding: 15px 20px;
+  }
+  .submenu li a {
+     padding: 10px 20px;
+     margin: 0 20px;
+  }
+}
+
+@media(min-width: 600px) {
+  .topmenu {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }
+  .topmenu>li {
+     position: relative;
+  }
+  .topmenu>li:after {
+     content: "";
+     position: absolute;
+     right: 0;
+     width: 1px;
+     height: 12px;
+     background: #d2d2d2;
+     top: 24px;
+     box-shadow: 4px -2px 0 #d2d2d2;
+     transform: rotate(30deg);
+  }
+  .topmenu>li:last-child:after {
+     background: none;
+     box-shadow: none;
+  }
+  .submenu {
+     position: absolute;
+     left: 50%;
+     top: 100%;
+     width: 210px;
+     margin-left: -105px;
+     background: #fafafa;
+     border: 1px solid #ededed;
+     z-index: 5;
+     visibility: hidden;
+     opacity: 0;
+     transform: scale(.8);
+     transition: .4s ease-in-out;
+  }
+  .topmenu>li:hover .submenu {
+     visibility: visible;
+     opacity: 1;
+     transform: scale(1);
+  }
+  .submenu li a {
+     text-align: center;
+     padding: 10px 0;
+     margin: 0 10px;
+  }
+}
+
+div.items div.item div.brand{
+    font-family: 'Manrope';
+    color: #484848;
+    margin-top: 15px;
+}
+
+div.items div.item div.price{
+    font-family: 'Segoe UI';
+}
+
+div.items div.item div.name{
+    font-family: 'Manrope';
+    font-size: 13px;
+    max-width: 170px;
+}
+
+div.items div.item div.buy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+div.items div.item div.buy a{
+    text-decoration: none;
+    font-family: 'Manrope';
+    font-size: 13px;
+    color: white;
+    background-color:#484848;
+    padding: 5px;
+    border-radius: 2px;
+
+}
+
+div.items div.item div.buy a:hover{
+  background-color: #6e6e6e;
+  
+}
+
+div.item{
+    width: fit-content;
+}
+
+div.items{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+@font-face{
+    font-family: "Manrope";
+    src: url('fonts/manrope.ttf');
+}

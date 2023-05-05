@@ -1,0 +1,128 @@
+section{
+	font-family: 'Manrope';
+	color: #484848;
+}
+
+section.cartItems{
+	margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+section.cartItems div.items{
+	display: flex;
+	flex-direction: column;
+}
+
+section.cartItems img{
+	border-radius: 5px;
+}
+
+section.cartItems div.items div.item{
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-right: 5%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section.cartItems div.items div.item div.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+div.description{
+	display: flex;
+	flex-direction: row;
+}
+
+div.description div.header{
+	margin-left: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+section.cartItems div.items div.item div.info div.buy{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+section.cartItems div.items div.item div.quantity{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+section a{
+    text-decoration: none;
+    font-family: 'Manrope';
+    font-size: 14px;
+    color: white;
+    background-color:#484848;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+div.buy{
+	margin-bottom: 8px;
+}
+
+section a:hover{
+  background-color: #6e6e6e;
+  
+}
+
+button{
+	margin-left: 10px;
+	margin-right: 10px;
+	appearance: none;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:active{
+	background-color: hsla(36, 90%, 81%, 0.616);
+}
+
+section.cartItems div.items div.item div.info div.name{
+	color: #484848;
+	font-size: 16px;
+}
+
+section.cartItems div.items div.item div.info div.brand{
+	 font-size: 20px;
+	 color: black;
+}
+
+section.confirm{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 15%;
+	margin-right: 14%;
+	align-items: center;
+	margin-top: 40px;
+}
+
+section.confirm div.sum{
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+@font-face{
+    font-family: "Manrope";
+    src: url('fonts/manrope.ttf');
+}
