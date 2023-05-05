@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 22 2022 г., 19:19
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.1.33
+-- Время создания: Май 05 2023 г., 15:26
+-- Версия сервера: 8.0.30
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `email` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -37,7 +37,8 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`email`) VALUES
 ('potapov.viktor2003@yandex.ru'),
-('ivan@admin.ru');
+('ivan@admin.ru'),
+('aaaa@a.a');
 
 -- --------------------------------------------------------
 
@@ -46,10 +47,10 @@ INSERT INTO `admins` (`email`) VALUES
 --
 
 CREATE TABLE `categories` (
-  `section` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id` int(11) NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `picture` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `section` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -85,17 +86,41 @@ INSERT INTO `categories` (`section`, `id`, `name`, `picture`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `contact`
+--
+
+CREATE TABLE `contact` (
+  `name` text NOT NULL,
+  `value` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `contact`
+--
+
+INSERT INTO `contact` (`name`, `value`) VALUES
+('about', 'Next - международная компания электронной коммерции в сфере быстрой моды B2C. Компания главным образом фокусирует на женской одежде, предлагая так же широкий ассортимент мужской и детской одежды, обувь, аксессуары. Next успешно реализует продажу на рынках Европы, Америки, Австралии, и Среднего Востока. Бренд был основан в 2015 году, и с тех пор он придерживается философии, согласно которой \"каждый может наслаждаться красотой моды\".Его бизнес охватывает более 150 стран по всему миру.'),
+('mission', 'Next гордится тем, что предлагает большой ассортимент трендовых нарядов для женщин и девушек. Next внимательно следит за тенденциями мира мода, чтобы модницы Next шли в ногу с модой, грамотно обновляя свой гардероб. Что бы Вы не искали - платья бохо, графические принты, ажурные блузы или ультра-яркие купальники, Next - станет идеальным универсальным магазином для современной и экономной модницы, предлагая широкий ассортимент качественной одежды по демократичным ценам.'),
+('where', 'В настоящее время продукция Next поставляется в более чем 150 стран по всему миру. У компании есть сайты, поддерживающиеся в таких странах, как США, Испания, Франция, Россия, Германия, Италия, Австралия и страны Ближнего Востока. Next так же содержит крупные склады на территории ряда стран Европы, США и Азии.'),
+('address', '192019, г. Москва, ул. Мельничная,\r\nдом 22, литер А, офис 28'),
+('email', 'next.nx@mail.ru'),
+('phone', '8 (892) 713-70-46'),
+('time', 'пн.-пт. с 9:00 до 18:00, без перерыва.\r\nсб, вс — выходной');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `items`
 --
 
 CREATE TABLE `items` (
-  `id` int(11) NOT NULL,
-  `brand` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` int(11) NOT NULL,
-  `picture` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `categoryId` int(11) NOT NULL
+  `id` int NOT NULL,
+  `brand` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int NOT NULL,
+  `picture` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categoryId` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -110,9 +135,7 @@ INSERT INTO `items` (`id`, `brand`, `name`, `price`, `picture`, `description`, `
 (101004, 'Zarina', 'Рубашка', 999, 'img/woman/items/101004.webp', 'Состав - Вискоза 100%, сезон - мульти.', 101),
 (101005, 'A.Karina', 'Рубашка', 3844, 'img/woman/items/101005.webp', 'Состав - Полиэстер 100%, материал подкладки - без подкладки, цвет - черный, узор - однотонный, страна производства - Россия, сезон - мульти.', 101),
 (102001, 'UNIQLO', 'Брюки эластичные', 1999, 'img/woman/items/102001.webp', 'Эластичные брюки, прямой силуэт. Легкий комбинированный материал отлично тянется, обеспечивая свободу движений. Практически не мнется и держит стрелки – даже после стирки.\r\n', 102),
-(102002, 'Lusio', 'Брюки', 4550, 'img/woman/items/102002.webp', 'Состав - Полиэстер 48%, Вискоза 48%, Эластан 4%, материал подкладки - Полиэстер 98%, Эластан 2%', 102),
 (102003, 'Lusio', 'Брюки', 4193, 'img/woman/items/102003.webp', 'Состав - Полиэстер 63%, Вискоза 34%, Эластан 3%, материал подкладки - Полиэстер 100%', 102),
-(102004, 'Falinda', 'Брюки', 3606, 'img/woman/items/102004.webp', 'Состав - Вискоза 50%, Полиэстер 47%, Эластан 3%', 102),
 (102005, 'A.Karina', 'Брюки', 4672, 'img/woman/items/102005.webp', 'Состав - Полиамид 15%, Эластан 5%, Вискоза 45%, Полиэстер 35%', 102),
 (103001, 'UNIQLO', 'Пуховик ультралегкий дутый с капюшоном', 7999, 'img/woman/items/103001.webp', 'Ультралегкая пуховая дутая куртка с капюшоном изготовлена из натурального пуха премиального качества (Fill Power 640), который удерживает воздух, создавая превосходный теплоизоляционный эффект. Благодаря тонким, но прочным нейлоновым нитям куртка отличается исключительной легкостью, несмотря на объемный силуэт. Капюшон защищает от ветра и холода. Материал внешней стороны обладает водоотталкивающими свойствами, а подкладка – антистатическим эффектом. Складывается в чехол, который идет в комплекте.', 103),
 (103002, 'UNIQLO', 'Жилет пуховый ультралегкий', 4999, 'img/woman/items/103002.webp', 'Ультралегкий пуховый жилет изготовлен из натурального пуха премиального качества (Fill Power 640), который удерживает воздух, создавая превосходный теплоизоляционный эффект. Материал внешней стороны жилета обладает водоотталкивающими свойствами, а подкладка – антистатическим эффектом. Жилет складывается в компактный чехол, который идет в комплекте. Удобно брать с собой.', 103),
@@ -132,10 +155,7 @@ INSERT INTO `items` (`id`, `brand`, `name`, `price`, `picture`, `description`, `
 (106004, 'Modis', 'Топ', 2793, 'img/woman/items/106004.webp', 'Состав:  Хлопок - 52%, Модал - 38%, Эластан - 10%; Сезон: Мульти; Цвет: Розовый', 106),
 (107001, 'DeFacto', 'Свитшот', 1499, 'img/woman/items/107001.webp', 'Состав:  Хлопок - 37%, Полиэстер - 63%; Сезон: Демисезон; Цвет: черный', 107),
 (107002, 'Minaku', 'Худи', 4899, 'img/woman/items/107002.webp', 'Состав:  Хлопок - 80%, Полиэстер - 20%; Сезон: Мульти; Цвет: коричневый', 107),
-(107003, 'Colins', 'Свитшот', 1270, 'img/woman/items/107003.webp', 'Состав: Хлопок - 100%; Сезон: Мульти; Цвет: бирюзовый', 107),
-(107004, 'Befree', 'Худи', 1847, 'img/woman/items/107004.webp', 'Состав: Хлопок - 60%, Полиэстер - 40%; Сезон: Мульти; Цвет: бежевый', 107),
 (108001, 'Befree', 'Юбка', 7010, 'img/woman/items/108001.webp', 'Состав: Полиэстер - 100%; Сезон: Мульти; Цвет: черный', 108),
-(108002, 'Ostin', 'Юбка', 1999, 'img/woman/items/108002.webp', 'Состав: Полиэстер - 81%, Акрил - 13%, Нейлон - 2%, Вискоза - 2%, Хлопок - 1%, Шерсть - 1%; Сезон: Мульти; Цвет: серый', 108),
 (108003, 'Ostin', 'Юбка', 1199, 'img/woman/items/108003.webp', 'Состав: Полиэстер - 78%, Вискоза - 20%, Эластан - 2%; Сезон: Мульти; Цвет: черный', 108),
 (108004, 'Moanna', 'Юбка джинсовая', 4000, 'img/woman/items/108004.webp', 'Состав: Хлопок - 95%, Эластан - 5%; Сезон: Мульти; Цвет: синий; Застежка: Молния', 108),
 (201001, 'Stenser', 'Брюки', 3319, 'img/man/items/201001.webp', 'Состав: Полиэстер - 52%, Вискоза - 43%, Спандекс - 5%', 201),
@@ -153,7 +173,6 @@ INSERT INTO `items` (`id`, `brand`, `name`, `price`, `picture`, `description`, `
 (204001, 'UNIQLO', 'Джинсы', 3999, 'img/man/items/204001.webp', 'Джинсы, стандартный силуэт. Изготовлены из 100%-го хлопкового денима от всемирно известной японской компании KAIHARA. Особая технология окрашивания позволяет придать джинсам винтажный эффект. Классическая модель, не теряющая актуальность в новом сезоне.', 204),
 (204002, 'DeFacto', 'Джинсы', 2899, 'img/man/items/204002.webp', 'Состав: Хлопок - 98%, Эластан - 2%', 204),
 (204003, 'Tom Tailor', 'Джинсы', 4799, 'img/man/items/204003.webp', 'Состав: Хлопок - 98%, Эластан - 2%', 204),
-(204004, 'UNIQLO', 'Джинсы', 3999, 'img/man/items/204004.webp', 'Джинсы, зауженный силуэт, стандартная посадка. Классическая модель в винтажном стиле. С небольшим добавлением эластана для свободы движений. Расход воды при производстве сокращен на 90% благодаря инновационному способу обработки ткани.', 204),
 (205001, 'Colins', 'Рубашка', 1699, 'img/man/items/205001.webp', 'Состав: Хлопок - 72%, Лен - 28%; Сезон - Мульти', 205),
 (205002, 'Befree', 'Рубашка', 2279, 'img/man/items/205002.webp', 'Состав: Полиэстер - 70%, Акрил - 30%; Сезон - Мульти', 205),
 (205003, 'Befree', 'Рубашка', 2279, 'img/man/items/205003.webp', 'Состав: Полиэстер - 70%, Акрил - 30%; Сезон - Мульти; Цвет - Фиолетовый', 205),
@@ -186,9 +205,9 @@ INSERT INTO `items` (`id`, `brand`, `name`, `price`, `picture`, `description`, `
 --
 
 CREATE TABLE `orderitems` (
-  `itemId` int(11) NOT NULL,
-  `orderId` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `itemId` int NOT NULL,
+  `orderId` int NOT NULL,
+  `price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -210,10 +229,10 @@ INSERT INTO `orderitems` (`itemId`, `orderId`, `price`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
-  `userEmail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL,
+  `userEmail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `dateTime` datetime NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -231,10 +250,10 @@ INSERT INTO `orders` (`id`, `userEmail`, `dateTime`, `price`) VALUES
 --
 
 CREATE TABLE `users` (
-  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pass` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `surname` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surname` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -242,6 +261,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email`, `pass`, `name`, `surname`) VALUES
+('aaaa@a.a', '$2y$10$6mK68n0tivUASl4QeCKlxesJC0UMVf0cZ6fq.Yom9VHVk71fvg7ui', 'Имя', 'Фамилия'),
 ('ivan@admin.ru', '$2y$10$qf5g2LHZOIyZ..w54dv5det6YwGv4YOqKGLp30M3jzw4cIhAJZj16', 'Иван', 'Головин');
 
 --
