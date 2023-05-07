@@ -61,7 +61,13 @@ header{
     line-height: 1;
     margin-bottom: 10px;
 }
-
+button{
+    padding: 8px;
+    color: #484848;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 10px;
+}
 @media (max-width: 767px) {
     .descript-wrapper,
     .ico-wrap {

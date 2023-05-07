@@ -135,7 +135,7 @@
             <ul>                 
                 <li><a href="../cart.php">КОРЗИНА</a></li>
                 <li><a href="lk.php">Личный кабинет</a></li>
-                <li><a href="../about.php">О КОМПАНИИ</a></li>
+                <li><a href="about.php">О КОМПАНИИ</a></li>
             </ul>   
 
         </div>
